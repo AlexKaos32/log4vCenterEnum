@@ -10,7 +10,7 @@ done
 
 
 while read ip; do
-	curl -ski https://$ip/ui/login | grep location | cut -d " " -f 2 | cut -d "=" -f 1 | sed 's/$/=/' >> targets.txt
+	curl -ski https://$ip/ui/login | grep -i location | cut -d " " -f 2 | cut -d "=" -f 1 | sed 's/$/=/' >> targets.txt
 done < $list
 
 
